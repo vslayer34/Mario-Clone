@@ -2661,4 +2661,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   speed: 300
-  jumpForce: 20
+  jumpForce: 300
