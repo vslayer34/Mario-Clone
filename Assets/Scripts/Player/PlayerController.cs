@@ -4,34 +4,58 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
 
-    private float speed = 5.0f;
-    private float movementX;
+    [SerializeField] float speed = 20.0f;
+    float movementX;
+
+
+    [SerializeField] float jumpForce;
+    bool isJumpCalled;
+    bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isJumpCalled = false;
+        isGrounded = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         movementX = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isJumpCalled = true;
+        }
     }
 
     private void FixedUpdate()
     {
         Move(movementX);
+        Jump();
     }
 
     void Move(float direction)
     {
-        //Vector2 pos = (Vector2)transform.position;
-        //rb.MovePosition(pos + (direction * speed * Time.deltaTime));
-        Vector2 pos = (Vector2)transform.position;
-        rb.MovePosition(new Vector2(pos.x + (direction * speed * Time.deltaTime), transform.position.y));
+        rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+    }
+
+    void Jump()
+    {
+        if (isJumpCalled && isGrounded)
+        {
+            rb.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
+            isGrounded = false;
+            isJumpCalled = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = true;
     }
 }
