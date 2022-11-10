@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         movementX = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // setting the boolean so the player can jump in the fixed update
             isJumpCalled = true;
         }
     }
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        // only jumping when the buttom is pressed and the player is on the ground
         if (isJumpCalled && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Make sure the player is on the ground to prevent jumbing in the air
         if (collision.gameObject.CompareTag("Ground"))
             isGrounded = true;
     }
