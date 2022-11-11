@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Joystick joystick;
 
     [SerializeField] float speed = 20.0f;
     float movementX;
@@ -17,6 +18,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        joystick.SnapX = true;
+        //joystick.SnapY = true;
+        joystick.DeadZone = 0.3f;
         rb = GetComponent<Rigidbody2D>();
         isJumpCalled = false;
         isGrounded = true;
@@ -25,8 +29,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementX = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space))
+        //joystick. = Input.GetAxis("Horizontal");
+        if (joystick.Vertical > 0.7f)
         {
             // setting the boolean so the player can jump in the fixed update
             isJumpCalled = true;
@@ -35,13 +39,18 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(movementX);
+        Move(joystick.Horizontal);
         Jump();
     }
 
     void Move(float direction)
     {
-        rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+        if (direction >= 0.5f)
+            rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+        else if (direction <= -0.5f)
+            rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+        else
+            rb.velocity = new Vector2(0, rb.velocity.y);
     }
 
     void Jump()
@@ -50,8 +59,8 @@ public class PlayerController : MonoBehaviour
         if (isJumpCalled && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
-            isGrounded = false;
             isJumpCalled = false;
+            isGrounded = false;
         }
     }
 
