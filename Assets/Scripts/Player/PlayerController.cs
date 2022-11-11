@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -30,7 +28,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //joystick. = Input.GetAxis("Horizontal");
-        if (joystick.Vertical > 0.7f)
+        if (joystick.Vertical > 0.5f)
         {
             // setting the boolean so the player can jump in the fixed update
             isJumpCalled = true;
@@ -59,7 +57,6 @@ public class PlayerController : MonoBehaviour
         if (isJumpCalled && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
-            isJumpCalled = false;
             isGrounded = false;
         }
     }
@@ -68,6 +65,10 @@ public class PlayerController : MonoBehaviour
     {
         // Make sure the player is on the ground to prevent jumbing in the air
         if (collision.gameObject.CompareTag("Ground"))
+        {
             isGrounded = true;
+            isJumpCalled = false;
+        }
+            
     }
 }
