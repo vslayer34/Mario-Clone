@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Move(float direction)
     {
+        // to prevent the player from moving in the slightest changes to the joystick
         if (direction >= 0.5f)
             rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
         else if (direction <= -0.5f)
