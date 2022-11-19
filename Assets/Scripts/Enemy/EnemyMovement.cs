@@ -9,6 +9,10 @@ public class EnemyMovement : MonoBehaviour
     SpriteRenderer spriteRenderer;
     
     bool moveLeft;              // bool to determine movement direction defalut = true towards the player
+    
+    // to get the player script
+    [SerializeField] GameObject player;
+    private PlayerController target;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         moveLeft = true;
+
+        target = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -38,11 +44,19 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public void Die()
+    {
+        Debug.Log($"{gameObject.name} Died!!!");
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             moveLeft = false;
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+            target.Die();
     }
 }

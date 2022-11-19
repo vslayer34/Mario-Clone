@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Joystick joystick;
 
     [SerializeField] float speed = 20.0f;
-    float movementX;
 
 
     [SerializeField] float jumpForce;
@@ -16,10 +16,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        joystick.SnapX = true;
-        //joystick.SnapY = true;
-        joystick.DeadZone = 0.3f;
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        
+        // adjust the hard settings of the jpystick movement
+        joystick.SnapX = true;
+        joystick.DeadZone = 0.3f;
+
         isJumpCalled = false;
         isGrounded = true;
     }
@@ -45,9 +48,15 @@ public class PlayerController : MonoBehaviour
     {
         // to prevent the player from moving in the slightest changes to the joystick
         if (direction >= 0.5f)
+        {
             rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+            spriteRenderer.flipX = false;
+        }
         else if (direction <= -0.5f)
+        {
             rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+            spriteRenderer.flipX = true;
+        }
         else
             rb.velocity = new Vector2(0, rb.velocity.y);
     }
@@ -60,6 +69,11 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
             isGrounded = false;
         }
+    }
+
+    public void Die()
+    {
+        Debug.Log($"{gameObject.name} died!!!");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
