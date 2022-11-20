@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 53393838308975736}
   - component: {fileID: 53393838308975739}
+  - component: {fileID: 1832114927}
   m_Layer: 0
   m_Name: Player Kill
   m_TagString: Untagged
@@ -142,6 +143,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58717525, y: 0.046571076}
   m_EdgeRadius: 0
+--- !u!114 &1832114927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53393838308975737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438f7f53787492d428a55e8ac582762b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 53393838560717911}
 --- !u!1 &53393838560717911
 GameObject:
   m_ObjectHideFlags: 0
