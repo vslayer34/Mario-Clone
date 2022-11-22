@@ -9,11 +9,13 @@ public class GameObjectData : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public Animator animator;
-
+    private CircleCollider2D circleCollider;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer.sprite = item.sprite;
         animator.runtimeAnimatorController = item.animator;
+        circleCollider = gameObject.AddComponent<CircleCollider2D>();
+        circleCollider.isTrigger = true;
     }
 }

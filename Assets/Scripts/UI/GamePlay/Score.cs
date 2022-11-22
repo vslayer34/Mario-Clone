@@ -16,6 +16,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textField.text = $"score: {GameManager.instance.playerScore.ToString()}";
+        textField.text = $"score: {GameManager.instance.playerScore.ToString("D4")}";
     }
 }

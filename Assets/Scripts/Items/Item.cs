@@ -6,7 +6,7 @@ public class Item : ScriptableObject
 {
     public Sprite sprite;
     public AnimatorController animator;
-    public CoinBCoinBehaviour behaviour;
+    public Behaviour behaviour;
 
 
     public string itemName;
