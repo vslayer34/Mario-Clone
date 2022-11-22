@@ -22,4 +22,10 @@ public class GameManager : MonoBehaviour
     {
         playerScore = 0;
     }
+
+    public void UpdateScore(Item item)
+    {
+        if (item.isCoin)
+            instance.playerScore += item.value;
+    }
 }
