@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 53393838165082531}
   - component: {fileID: 53393838165082530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 53393838308975736}
   - component: {fileID: 53393838308975739}
   - component: {fileID: 1832114927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Kill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 53393838560717905}
   - component: {fileID: 53393838560717910}
   - component: {fileID: 53393838560717907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
