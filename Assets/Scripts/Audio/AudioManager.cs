@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static AudioManager instance;
+
+    public Sound[] audioClips;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+            instance = this;
+        else
+            Debug.LogWarning("Audio Manager instance failed to instancize");
     }
 
     // Update is called once per frame
