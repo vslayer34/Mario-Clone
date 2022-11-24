@@ -12337,7 +12337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818d06afbca1abc47bc483fc68b97180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 8d1e5db8bd2d3d0489297e0ef2df7099, type: 3}
+    name: Coin Pickup
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
 --- !u!1 &1321388713
 GameObject:
   m_ObjectHideFlags: 0

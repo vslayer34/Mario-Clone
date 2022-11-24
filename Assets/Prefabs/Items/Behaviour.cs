@@ -14,12 +14,17 @@ public class Behaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // For coins
-        if (collision.gameObject.CompareTag("Player") && item.itemName == "Coin")
+        if (item.itemName == "Coin")
         {
-            GameManager.instance.UpdateScore(item);
-            Destroy(gameObject);
-            Debug.Log($"Add {item.value}");
+            // For coins
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                GameManager.instance.UpdateScore(item);
+                Destroy(gameObject);
+                Debug.Log($"Add {item.value}");
+
+                AudioManager.instance.Play(SoundNames.coinPickup);
+            }
         }
     }
 }
