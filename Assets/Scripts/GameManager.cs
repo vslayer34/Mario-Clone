@@ -28,4 +28,9 @@ public class GameManager : MonoBehaviour
         if (item.isCoin)
             instance.playerScore += item.value;
     }
+
+    IEnumerator AppleEffect()
+    {
+
+    }
 }

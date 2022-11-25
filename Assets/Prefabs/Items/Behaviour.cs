@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Behaviour : MonoBehaviour
 {
-    [SerializeField] GameObject itemBlueprint;
     private Item item;
 
     private void Start()
@@ -14,9 +13,9 @@ public class Behaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // For coins
         if (item.itemName == "Coin")
         {
-            // For coins
             if (collision.gameObject.CompareTag("Player"))
             {
                 GameManager.instance.UpdateScore(item);
@@ -24,6 +23,17 @@ public class Behaviour : MonoBehaviour
                 Debug.Log($"Add {item.value}");
 
                 AudioManager.instance.Play(SoundNames.coinPickup);
+            }
+        }
+
+
+        // For apple
+        if (item.itemName == "Apple")
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                GameManager.instance.UpdateScore(item);
+                Destroy(gameObject);
             }
         }
     }

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 258ef129f374f564c9893cb6a873b696, type: 3}
-  m_Name: Coin
+  m_Name: BigPlayer
   m_EditorClassIdentifier: 
-  sprite: {fileID: 4155154, guid: a64501fc38328624bacee0cb17c8c581, type: 3}
-  animator: {fileID: 9100000, guid: 7ec6353c188a43449b4c40905bb2f0dc, type: 2}
+  sprite: {fileID: 7293598183456022363, guid: b3720582992f37a489511d95413f6c16, type: 3}
+  animator: {fileID: 9100000, guid: e07ee83f7ea77304ea40399f04cc2474, type: 2}
   behaviour: {fileID: 0}
-  itemName: Coin
-  description: Add to the total score of the player
-  value: 500
-  isPowerUp: 0
-  isCoin: 1
-  gameObject: {fileID: 8992024134103797698, guid: 3fe020ed41cd3a241bc27e5f7af8463b, type: 3}
-  colliderRadius: 0.32
+  itemName: Apple
+  description: Make the player bigger and double the health amount
+  value: 50
+  isPowerUp: 1
+  isCoin: 0
+  gameObject: {fileID: 0}
+  colliderRadius: 0.2

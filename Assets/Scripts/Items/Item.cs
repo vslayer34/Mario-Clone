@@ -17,4 +17,6 @@ public class Item : ScriptableObject
     public bool isCoin;
 
     public GameObject gameObject;
+
+    public float colliderRadius;
 }

@@ -17,5 +17,6 @@ public class GameObjectData : MonoBehaviour
         animator.runtimeAnimatorController = item.animator;
         circleCollider = gameObject.AddComponent<CircleCollider2D>();
         circleCollider.isTrigger = true;
+        circleCollider.radius = item.colliderRadius;
     }
 }
