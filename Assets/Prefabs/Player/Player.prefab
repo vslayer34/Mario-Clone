@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5240404771859955215}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Obstacle
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19e248033c508a42a9e40ff40dffd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   rb: {fileID: 0}
   joystick: {fileID: 0}
   speed: 300
@@ -108,6 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5240404773336804127}
   - component: {fileID: 5240404773336804128}
+  - component: {fileID: 1733861661}
   m_Layer: 0
   m_Name: Player Sprite
   m_TagString: Obstacle
@@ -182,3 +184,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1733861661
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5240404773336804126}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d1e3e7d9a9d55a4d8a67a529776ff75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

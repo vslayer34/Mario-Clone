@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum PlayerState { NORMAL, DOUBLED, SUPER };
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField] GameObject player;
 
+    public int playerHealth = 1;
     public int playerScore;
     [SerializeField] GameObject scoreText;
     
@@ -29,8 +33,9 @@ public class GameManager : MonoBehaviour
             instance.playerScore += item.value;
     }
 
-    IEnumerator AppleEffect()
+    public void DoubleSize()
     {
-
+        player.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+        
     }
 }
