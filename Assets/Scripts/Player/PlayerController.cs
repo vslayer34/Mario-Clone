@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Animator animator;
     SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Joystick joystick;
 
     [SerializeField] float speed = 20.0f;
+    private float movementX;
 
 
     [SerializeField] float jumpForce;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
         
         // adjust the hard settings of the jpystick movement
         joystick.SnapX = true;
@@ -30,17 +33,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //joystick. = Input.GetAxis("Horizontal");
+        movementX = joystick.Horizontal;
+        animator.SetFloat("Speed", Mathf.Abs(movementX));
         if (joystick.Vertical > 0.5f)
         {
             // setting the boolean so the player can jump in the fixed update
             isJumpCalled = true;
+            animator.SetBool("Is Jumping", true);
         }
     }
 
     private void FixedUpdate()
     {
-        Move(joystick.Horizontal);
+        Move(movementX);
         Jump();
     }
 
@@ -83,6 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             isJumpCalled = false;
+            animator.SetBool("Is Jumping", false);
         }
             
     }
