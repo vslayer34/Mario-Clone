@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class EnemyMovement : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Player"))
-            target.Die();
+        {
+            target.Hit();
+        }
     }
 }

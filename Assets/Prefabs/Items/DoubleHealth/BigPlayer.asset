@@ -17,7 +17,7 @@ MonoBehaviour:
   behaviour: {fileID: 0}
   itemName: Apple
   description: Make the player bigger and double the health amount
-  value: 50
+  value: 200
   isPowerUp: 1
   isCoin: 0
   gameObject: {fileID: 0}

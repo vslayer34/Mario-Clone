@@ -76,9 +76,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void Hit()
     {
-        Debug.Log($"{gameObject.name} died!!!");
+        if (GameManager.instance.playerState == PlayerState.NORMAL)
+            Debug.Log($"{gameObject.name} died!!!");
+
+        else if (GameManager.instance.playerState == PlayerState.DOUBLED)
+        {
+            GameManager.instance.RemoveDoubleSize();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

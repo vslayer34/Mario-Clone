@@ -33,6 +33,8 @@ public class Behaviour : MonoBehaviour
             if (collision.gameObject.CompareTag("Player"))
             {
                 GameManager.instance.UpdateScore(item);
+                GameManager.instance.DoubleSize();
+                Debug.Log($"Player state: {GameManager.instance.playerState}");
                 Destroy(gameObject);
             }
         }
