@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -54,7 +55,14 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            moveLeft = false;
+            bool collisiobOccoured = false;
+            if (collisiobOccoured)
+                return;
+            if (!collisiobOccoured)
+            {
+                moveLeft = !moveLeft;
+                collisiobOccoured = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("Player"))
