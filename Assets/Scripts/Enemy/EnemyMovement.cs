@@ -10,11 +10,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float speed;
     SpriteRenderer spriteRenderer;
     [SerializeField] Animator animator;
-    
 
+    // bool to detect whether the enemy is alice or dear
+    bool isAlive;
+    // bool to determine movement direction defalut = true towards the player
+    bool moveLeft;
 
-    bool moveLeft;              // bool to determine movement direction defalut = true towards the player
-    
     // to get the player script
     [SerializeField] GameObject player;
     private PlayerController target;
@@ -25,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         moveLeft = true;
+        isAlive = true;
 
         target = player.GetComponent<PlayerController>();
     }
@@ -56,8 +58,10 @@ public class EnemyMovement : MonoBehaviour
 
     public void Die()
     {
+        isAlive = false;
         animator.SetBool("Is Hit", true);
         Debug.Log($"{gameObject.name} Died!!!");
+        StartCoroutine("DelayDestroy");
         //Destroy(gameObject);
     }
 
@@ -69,9 +73,16 @@ public class EnemyMovement : MonoBehaviour
             moveLeft = !moveLeft;
         }
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && isAlive)
         {
             target.Hit();
         }
+    }
+
+
+    private IEnumerator DelayDestroy()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }

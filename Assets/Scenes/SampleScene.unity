@@ -12625,10 +12625,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 5240404773534607041}
-    - target: {fileID: 53393838560717910, guid: 595a4db9bb0082347821bf7b612f64e4, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 53393838560717911, guid: 595a4db9bb0082347821bf7b612f64e4, type: 3}
       propertyPath: m_Name
       value: Enemy 1
