@@ -55,14 +55,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            bool collisiobOccoured = false;
-            if (collisiobOccoured)
-                return;
-            if (!collisiobOccoured)
-            {
-                moveLeft = !moveLeft;
-                collisiobOccoured = true;
-            }
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+            moveLeft = !moveLeft;
         }
 
         if (collision.gameObject.CompareTag("Player"))
