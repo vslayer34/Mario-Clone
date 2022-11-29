@@ -9,7 +9,10 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField] float speed;
     SpriteRenderer spriteRenderer;
+    [SerializeField] Animator animator;
     
+
+
     bool moveLeft;              // bool to determine movement direction defalut = true towards the player
     
     // to get the player script
@@ -24,6 +27,11 @@ public class EnemyMovement : MonoBehaviour
         moveLeft = true;
 
         target = player.GetComponent<PlayerController>();
+    }
+
+    private void Update()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(speed));
     }
 
     // Update is called once per frame
@@ -48,7 +56,9 @@ public class EnemyMovement : MonoBehaviour
 
     public void Die()
     {
+        animator.SetBool("Is Hit", true);
         Debug.Log($"{gameObject.name} Died!!!");
+        //Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
