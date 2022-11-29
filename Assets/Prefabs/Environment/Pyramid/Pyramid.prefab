@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057802747768091954}
+  - component: {fileID: 297905866}
   m_Layer: 0
   m_Name: Pyramid
   m_TagString: Obstacle
@@ -35,6 +36,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &297905866
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057802747768091953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: ed3c63adc1736074594142e3bbac65aa, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 158.96915, y: -1.9727898}
+  - {x: 158.96255, y: 2.5476482}
+  - {x: 157.76604, y: 2.513221}
+  - {x: 157.74623, y: 1.3426404}
+  - {x: 156.58003, y: 1.3347661}
+  - {x: 156.5654, y: 0.21965879}
+  - {x: 155.38177, y: 0.2188208}
+  - {x: 155.37239, y: -1.0019374}
+  - {x: 154.18022, y: -1.0112853}
+  - {x: 154.17163, y: -2.002988}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &1057802747272338787
 PrefabInstance:
   m_ObjectHideFlags: 0
