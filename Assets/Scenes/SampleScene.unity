@@ -12819,6 +12819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scale Power up
       objectReference: {fileID: 0}
+    - target: {fileID: 3807062613359849119, guid: dddb8abff44ab0d4198152b542aed6ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dddb8abff44ab0d4198152b542aed6ad, type: 3}
 --- !u!1 &1373977630 stripped
@@ -14077,6 +14081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8803539845377325352, guid: 4be9ed67a289f914d8f38d5de4da6083, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5240404773534607041}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be9ed67a289f914d8f38d5de4da6083, type: 3}
 --- !u!4 &1885992063 stripped
