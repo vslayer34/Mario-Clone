@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gfx: {fileID: 5843377878123359114}
-  idle: {fileID: 7400000, guid: b47b27db4a9afb246b33a82b02924da8, type: 2}
 --- !u!61 &3813706415078589508
 BoxCollider2D:
   m_ObjectHideFlags: 0
