@@ -18,6 +18,8 @@ public class FollowPlayer : MonoBehaviour
         }
         if (target.position.y > 4.0f)
         {
+            // the minuse 4 in position y so the camera doesn't snap to the middle of the screen
+            // the offset gives a scense of smooth transition
             transform.position = new Vector3(target.position.x, target.position.y - 4.0f, transform.position.z);
         }
     }
