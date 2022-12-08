@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
+    // Array of Items to spanw
+    // Index 0: Glod Coin
+    // Index 1: Double Size
     [SerializeField] Item[] items;
-    bool isCoin;
-    bool isDoubleUp;
 
+    // Dermine what Kind of item is if not random generated
+    [SerializeField] bool isCoin;
+    [SerializeField] bool isDoubleUp;
+
+    // make sure the item is spawned before moving its transfom
     bool itemSpawned;
 
+
+    // placeholder item and the position in instansiate int
     [SerializeField] GameObject itemPlaceHolder;
     [SerializeField] Transform itemTransform;
 
-    float speed = 1.0f;
 
-    private void Start()
-    {
-        GenerateAnItem(items[0]);
-    }
+    // speed of the item poping up
+    float speed = 1.0f;
 
     private void Update()
     {
@@ -35,8 +40,16 @@ public class ItemSpawner : MonoBehaviour
         itemSpawned = true;
     }
 
-    //void SpawnItem(Item )
-    //{
-
-    //}
+    // SpawnItem to be called when it hit by the player
+    public void SpawnItem()
+    {
+        if (isCoin)
+        {
+            GenerateAnItem(items[0]);
+        }
+        else if (isDoubleUp)
+        {
+            GenerateAnItem(items[1]);
+        }
+    }
 }

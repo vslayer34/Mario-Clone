@@ -22,7 +22,7 @@ public class KillZone : MonoBehaviour
             enemy.Die();
 
             rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-
+            GameManager.instance.playerScore += 200;
         }
     }
 }

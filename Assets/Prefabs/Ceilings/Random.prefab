@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gfx: {fileID: 5843377878123359114}
+  spawner: {fileID: 1898183320386079874}
 --- !u!61 &3813706415078589508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,6 +120,8 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 1c174feda6ee3324791d3a1655e49445, type: 2}
   - {fileID: 11400000, guid: 17b51f49de90a7a4eb8d1582ed179f6b, type: 2}
+  isCoin: 0
+  isDoubleUp: 0
   itemPlaceHolder: {fileID: 3807062613359849119, guid: dddb8abff44ab0d4198152b542aed6ad, type: 3}
   itemTransform: {fileID: 6167716299878790067}
 --- !u!1 &5843377878123359114
