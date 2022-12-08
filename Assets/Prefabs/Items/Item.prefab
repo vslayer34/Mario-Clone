@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1292529515}
   - component: {fileID: 1292529516}
   - component: {fileID: 1292529514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f639f04a8dc469429f8986cfebcaebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 1c174feda6ee3324791d3a1655e49445, type: 2}
   spriteRenderer: {fileID: 1292529515}
   animator: {fileID: 1292529516}

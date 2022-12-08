@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundNames
 {
     public const string coinPickup = "Coin Pickup";
+    public const string doubledPickup = "Double Size Pickup";
 }
 
 public class BoxAnimations

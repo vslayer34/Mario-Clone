@@ -26,7 +26,7 @@ public class RandomHitZone : MonoBehaviour
         {
             // Pause the animation when the player hit the block
             animator.enabled = false;
-            itemSpawner.SpawnItem();
+            itemSpawner.SpawnItem();;
         }
     }
 }

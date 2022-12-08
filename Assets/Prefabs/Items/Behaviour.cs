@@ -35,6 +35,7 @@ public class Behaviour : MonoBehaviour
                 GameManager.instance.UpdateScore(item);
                 GameManager.instance.DoubleSize();
                 Debug.Log($"Player state: {GameManager.instance.playerState}");
+                AudioManager.instance.Play(SoundNames.doubledPickup);
                 Destroy(gameObject);
             }
         }

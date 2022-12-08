@@ -12,9 +12,13 @@ public class FollowPlayer : MonoBehaviour
 
     void FollowTarget(Transform target)
     {
-        if (transform.position.x < target.position.x)
+        if (transform.position.x < target.position.x && target.position.y < 4.0f)
         {
-            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+                transform.position = new Vector3(target.position.x, 0.0f, transform.position.z);
+        }
+        if (target.position.y > 4.0f)
+        {
+            transform.position = new Vector3(target.position.x, target.position.y - 4.0f, transform.position.z);
         }
     }
 }
