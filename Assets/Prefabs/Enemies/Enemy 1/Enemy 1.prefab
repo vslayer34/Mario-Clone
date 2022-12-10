@@ -265,4 +265,4 @@ MonoBehaviour:
   maxDistance: 0
   speed: 70
   animator: {fileID: 1824358752}
-  player: {fileID: 0}
+  player: {fileID: 5240404771859955211, guid: 23f38301474951147868a30062c794a8, type: 3}

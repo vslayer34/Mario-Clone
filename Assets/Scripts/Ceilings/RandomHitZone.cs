@@ -29,7 +29,6 @@ public class RandomHitZone : MonoBehaviour
 
             // Spawn new item and disabe the script to prevent it from spawning more items after the player hit it again
             itemSpawner.SpawnItem();
-            itemSpawner.enabled = false;
         }
     }
 }
