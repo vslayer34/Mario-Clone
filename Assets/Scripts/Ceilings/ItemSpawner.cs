@@ -27,8 +27,11 @@ public class ItemSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (itemSpawned && itemTransform.localPosition.y < 0.5)
+        if (itemSpawned && itemTransform.position.y < 0.5)
+        {
+            Debug.Log(itemTransform.position.y.ToString());
             itemTransform.Translate(0, speed * Time.deltaTime, 0);
+        }
     }
 
     void GenerateAnItem(Item desiredItem)

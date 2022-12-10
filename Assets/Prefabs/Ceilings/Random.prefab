@@ -120,7 +120,7 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 1c174feda6ee3324791d3a1655e49445, type: 2}
   - {fileID: 11400000, guid: 17b51f49de90a7a4eb8d1582ed179f6b, type: 2}
-  isCoin: 0
+  isCoin: 1
   isDoubleUp: 0
   itemPlaceHolder: {fileID: 3807062613359849119, guid: dddb8abff44ab0d4198152b542aed6ad, type: 3}
   itemTransform: {fileID: 6167716299878790067}
