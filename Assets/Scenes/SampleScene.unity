@@ -356,6 +356,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6792683854117550511, guid: d1b7802a703b0ec4c83e2181c7ba7aac, type: 3}
+      propertyPath: isCoin
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792683854117550511, guid: d1b7802a703b0ec4c83e2181c7ba7aac, type: 3}
       propertyPath: isDoubleUp
       value: 1
       objectReference: {fileID: 0}
